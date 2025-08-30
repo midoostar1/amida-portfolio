@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://amida-portfolio.vercel.app";
 export const metadata: Metadata = {
   title: "Amida Fombutu — Portfolio",
   description: "Full-Stack & React Native Developer in OKC",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
     { rel: "icon", url: "/icon.png", type: "image/png", sizes: "512x512" },
     { rel: "apple-touch-icon", url: "/apple-icon.png" },
   ],
+  metadataBase: new URL(siteUrl),
 };
 
 export default function RootLayout({
